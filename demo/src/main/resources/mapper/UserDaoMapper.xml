@@ -11,4 +11,7 @@
         SELECT * from users where username = #{username}
     </select>
 
+    <insert id="registUserInfo">
+        insert into users (username,password,nickname,rating)value (#{username},#{password},#{nickname},#{rating})
+    </insert>
 </mapper>

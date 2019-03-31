@@ -6,14 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-    <form action="/bootdemo/login/student" method="post">
-        username:<input type="text" name="username"/>
-        psw:<input type="password" name="password">
+    <form action="/bootdemo/getLog" method="post">
+        pageNum:<input type="text" name="pageNum"/>
 
-
-        登录类型:<input type="text" name="rating">
-
-        <input type="submit" value="登录">
+        <input type="submit" value="提交">
     </form>
 
 

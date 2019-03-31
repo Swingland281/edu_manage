@@ -2,7 +2,10 @@ package com.bluemsun.demo.controller;
 
 
 import com.bluemsun.demo.annotation.Anno;
+import com.bluemsun.demo.entity.Page;
+import com.bluemsun.demo.entity.SystemLog;
 import com.bluemsun.demo.entity.users;
+import com.bluemsun.demo.service.LogServiceInterface;
 import com.bluemsun.demo.service.UserServiceInterfece;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,8 @@ public class StudentServlet {
     @Autowired
     UserServiceInterfece userServiceInterfece;
 
+    @Autowired
+    LogServiceInterface logServiceInterface;
 
     //根据id查对应的student对象所有属性
     @RequestMapping("/student/getInfo")
@@ -36,8 +41,15 @@ public class StudentServlet {
     }
 
 
-
-
+    @RequestMapping("/getLog")
+    public void getOperationLog (@RequestParam("pageNum") int pageNum,HttpServletResponse response) throws IOException {
+        //默认一页有五条数据
+        System.out.println("hello pagenUm");
+        int pageSize = 5;
+        Page<SystemLog> allLogs = logServiceInterface.getAllLogs(pageNum,pageSize);
+        JSONObject jsonObject =  JSONObject.fromObject(allLogs);
+        response.getWriter().write(jsonObject.toString());
+    }
 
 
 

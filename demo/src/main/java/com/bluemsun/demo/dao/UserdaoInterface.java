@@ -15,4 +15,7 @@ public interface UserdaoInterface {
 
     //查询 导出信息
     users getStudentInfo(@Param("username") String username);
+
+    //注册学生学籍
+    void registUserInfo(@Param("username")String username,@Param("password") String password,@Param("nickname") String nickname,@Param("rating") int rating);
 }

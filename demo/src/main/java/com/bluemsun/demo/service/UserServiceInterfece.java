@@ -2,6 +2,7 @@ package com.bluemsun.demo.service;
 
 
 import com.bluemsun.demo.entity.users;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,5 +15,7 @@ public interface UserServiceInterfece {
 
     //查询 导出信息
     users getStudentInfo(String username);
+
+    void registUserInfo(String username, String password,String nickname, int rating);
 
 }

@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 public class UserServiceImple implements UserServiceInterfece {
 
     /**
-     *
+     * @author  liup
      */
     @Resource
     UserdaoInterface userdaoInterface;
@@ -31,5 +31,11 @@ public class UserServiceImple implements UserServiceInterfece {
     @Override
     public users getStudentInfo(String username) {
         return userdaoInterface.getStudentInfo(username);
+    }
+
+
+
+    public void registUserInfo(String username,String password,String nickname,int rating){
+        userdaoInterface.registUserInfo(username,password,nickname,rating);
     }
 }
