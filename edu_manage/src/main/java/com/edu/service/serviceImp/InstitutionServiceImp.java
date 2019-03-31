@@ -1,8 +1,7 @@
 package com.edu.service.serviceImp;
 
 import com.edu.dao.InstitutionDao;
-import com.edu.entity.Records;
-import com.edu.entity.User;
+import com.edu.entity.*;
 import com.edu.service.InstitutionService;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +31,25 @@ public class InstitutionServiceImp implements InstitutionService {
         return flag;
     }
 
-    public void addInformation(Records records){
-        institutionDao.addInformation(records);
+    public void addTest(Test test){
+        institutionDao.addTest(test);
     }
+    public void addInternship(Internship internship){
+        institutionDao.addInternship(internship);
+    }
+    public void addCompetition(Competition competition){
+        institutionDao.addCompetition(competition);
+    }
+    public void updTest(String uptodate,String test,String name){
+        institutionDao.updTest(uptodate,test,name);
+    }
+    public void updInternship(String uptodate,String company,String period,String name){
+        institutionDao.updInternship(uptodate,company,period,name);
+    }
+    public void updCompetition(String uptodate,String competition,String name){
+        institutionDao.updCompetition(uptodate,competition,name);
+    }
+
+
+
 }

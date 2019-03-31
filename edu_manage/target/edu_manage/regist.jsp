@@ -11,7 +11,7 @@
     <title>regist</title>
 </head>
 <body>
-<form method="post" action="/identification">
+<form method="post" action="">
     身份：<select name="rating">
             <option value="1">学生</option>
             <option value="2">公司</option>

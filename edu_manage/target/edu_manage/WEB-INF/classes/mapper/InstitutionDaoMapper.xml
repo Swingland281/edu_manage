@@ -8,7 +8,22 @@
     <select id="login" resultType="com.edu.entity.User">
         SELECT * FROM users WHERE username=#{username}
     </select>
-    <insert id="addInformation" parameterType="com.edu.entity.Records">
-        INSERT INTO records (student,recorder,record_type,Grade_cj,subject,remarks,grade_nj,competition_name,date) VALUES (#{student},#{recorder},#{record_type},#{Grade_cj},#{subject},#{remarks},#{grade_nj},#{competition_name},#{date})
+    <insert id="addTest" parameterType="com.edu.entity.Test">
+        INSERT INTO test (record_time,recorder,name,subject,grade,test,score,describe) VALUES (#{record_time},#{recorder},#{name},#{subject},#{test},#{score},#{describe})
     </insert>
+    <insert id="addInternship" parameterType="com.edu.entity.Internship">
+        INSERT INTO internship (record_time,recorder,name,company,period,describe) VALUES (#{record_time},#{recorder},#{name},#{company},#{period},#{describe})
+    </insert>
+    <insert id="addCompetition" parameterType="com.edu.entity.Competition">
+        INSERT INTO competition (record_time,recorder,name,competition,degree,achievement,describe) VALUES (#{record_time},#{recorder},#{name},#{competition},#{degree},#{achievement},#{describe})
+    </insert>
+    <update id="updTest" >
+        UPDATE test SET score = #{uptodate} WHERE test=#{test} AND name =#{name}
+    </update>
+    <update id="updCompetition">
+        UPDATE test SET achievement =#{uptodate} WHERE competition =#{competition} AND name=#{name}
+    </update>
+    <update id="updInternship">
+        UPDATE test SET period = #{uptodate} WHERE company=#{company} AND period=#{period} AND name=#{name}
+    </update>
 </mapper>

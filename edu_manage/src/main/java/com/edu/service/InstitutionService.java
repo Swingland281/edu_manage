@@ -1,7 +1,6 @@
 package com.edu.service;
 
-import com.edu.entity.Records;
-import com.edu.entity.User;
+import com.edu.entity.*;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.ServletException;
@@ -16,5 +15,10 @@ import java.io.IOException;
 public interface InstitutionService{
     public void regist(User user);
     public boolean login(String username,String password);
-    public void addInformation(Records records);
+    public void addTest(Test test);
+    public void addInternship(Internship internship);
+    public void addCompetition(Competition competition);
+    public void updTest(String uptodate,String test,String name);
+    public void updInternship(String uptodate,String company,String period,String name);
+    public void updCompetition(String uptodate,String competition,String name);
 }

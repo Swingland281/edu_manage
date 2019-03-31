@@ -11,7 +11,7 @@
     <!-- 自动扫描包，实现支持注解的IOC，这里是springMVC的配置文件，其实只需扫描Controller就可以 -->
     <context:component-scan base-package="com.edu.controller"/>
 
-    <!-- Spring MVC不处理静态资源 -->
+    <!-- Spring MVC不处理静态资源  -->
     <mvc:default-servlet-handler />
     <!--解决跨域问题-->
     <mvc:cors>
